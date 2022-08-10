@@ -1,6 +1,6 @@
 {
-  "name": "text-mask-all",
-  "version": "0.3.0",
+  "name": "@RxLightningInc/text-mask",
+  "version": "0.3.1",
   "description": "Conforms string to given mask or pattern, and can be hooked up to input element",
   "main": "index.js",
   "babel": {
@@ -63,7 +63,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/text-mask/text-mask.git"
+    "url": "git+https://github.com/RxLightningInc/text-mask.git"
   },
   "author": "M.K. Safi <msafi@msafi.com>",
   "license": "Unlicense",

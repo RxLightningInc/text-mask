@@ -15,6 +15,6 @@ cd ./core
 
 generatedNpmVersion="$(npm version $version)"
 
-npm publish --access public
+npm publish
 
 git tag "core-${generatedNpmVersion}"

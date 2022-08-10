@@ -15,6 +15,6 @@ ember test
 
 generatedNpmVersion="$(npm version $version)"
 
-npm publish --access public
+npm publish
 
 git tag "ember-${generatedNpmVersion}"
