@@ -1,0 +1,50 @@
+name: Deploy Package
+
+env:
+  ENVIRONMENT_NAME: prod
+
+on:
+  release:
+    types: [ released ]
+
+jobs:
+  build_job:
+    name: Build Prod
+    if: github.repository_owner == 'rxlightninginc'
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run-script build-prod
+
+      - name: Test
+        run: npm test
+
+      - name: Add Current Hash
+        run: git rev-parse --verify HEAD > build/build_hash.txt
+
+      - name: Add Current Environment
+        run: echo $ENVIRONMENT_NAME > build/build_environment.txt
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: text-mask
+          path: build/
+
+      - name: Publish
+        run: npm publish 

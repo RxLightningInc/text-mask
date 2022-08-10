@@ -9,4 +9,4 @@ fi
 
 generatedNpmVersion="$(npm version $version)"
 
-npm publish --access public --tag "text-mask-${generatedNpmVersion}"
+npm publish --tag "text-mask-${generatedNpmVersion}"

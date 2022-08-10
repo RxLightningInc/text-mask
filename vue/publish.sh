@@ -15,6 +15,6 @@ cd ./vue
 
 generatedNpmVersion="$(npm version $version)"
 
-npm publish --access public
+npm publish
 
 git tag "vue-${generatedNpmVersion}"

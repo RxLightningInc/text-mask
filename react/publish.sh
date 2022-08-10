@@ -15,6 +15,6 @@ cd ./react
 
 generatedNpmVersion="$(npm version $version)"
 
-npm publish --access public
+npm publish
 
 git tag "react-${generatedNpmVersion}"

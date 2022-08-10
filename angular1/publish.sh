@@ -13,6 +13,6 @@ cd ./angular1
 
 generatedNpmVersion="$(npm version $version)"
 
-npm publish --access public
+npm publish
 
 git tag "angular1-${generatedNpmVersion}"
